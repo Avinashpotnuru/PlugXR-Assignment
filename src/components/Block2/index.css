@@ -1,0 +1,57 @@
+.block2 {
+
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid black;
+    /* z-index: 20; */
+}
+
+.blockContainer {
+
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(228, 220, 224);
+    height: 100px;
+    width: 100px;
+    cursor: grabbing;
+    z-index: 20;
+}
+
+.container {
+    border: 1px solid black;
+    height: 800px;
+    width: 800px;
+}
+
+.close {
+    display: flex;
+    width: 100%;
+
+    justify-content: end;
+
+    align-items: end;
+}
+
+.active {
+    display: block;
+}
+
+.deactive {
+    display: none;
+}

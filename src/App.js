@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createContext, useState } from "react";
+import Block1 from "./components/Block1";
+import Block2 from "./components/Block2";
+import Block3 from "./components/Block3";
+
+export const store = createContext();
 
 function App() {
+  const [popupId, setId] = useState(1);
+
+  const [active, setActive] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <store.Provider value={[popupId, setId, active, setActive]}>
+      <div className="App">
+        <nav className="nav">
+          <button onClick={() => setActive((prev) => !prev)}>
+            {!active ? "Save" : "Saved"}
+          </button>
+        </nav>
+        <div className="sub-container">
+          <Block1 />
+          <Block2 />
+          <Block3 />
+        </div>
+      </div>
+    </store.Provider>
   );
 }
 
